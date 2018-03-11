@@ -22,7 +22,7 @@ author:
 
 # The URL of the homepage of your site (without trailing slash). Leave this
 # empty when you run Jekyll locally.
-url: https://kattergil.github.io/
+url: https://kattergil.github.io
 baseurl: ""
 
 # language attribute in <html> element.

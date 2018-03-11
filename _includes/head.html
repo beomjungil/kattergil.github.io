@@ -1,0 +1,115 @@
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width">
+<title>
+{% if page.title %}
+{{ page.title }} • {{ site.name }}
+{% else %}
+{{ site.name }}
+{% endif %}
+</title>
+<meta name="description" content="{{ page.summary }} {{ site.description.meta }}">
+<link rel="alternate" type="application/rss+xml" title="RSS 2.0" href="{{ site.baseurl }}/feed.xml">
+
+<!-- icons -->
+<link rel="apple-touch-icon" sizes="57x57" href="{{ site.baseurl }}/favicons/apple-icon-57x57.png">
+<link rel="apple-touch-icon" sizes="60x60" href="{{ site.baseurl }}/favicons/apple-icon-60x60.png">
+<link rel="apple-touch-icon" sizes="72x72" href="{{ site.baseurl }}/favicons/apple-icon-72x72.png">
+<link rel="apple-touch-icon" sizes="76x76" href="{{ site.baseurl }}/favicons/apple-icon-76x76.png">
+<link rel="apple-touch-icon" sizes="114x114" href="{{ site.baseurl }}/favicons/apple-icon-114x114.png">
+<link rel="apple-touch-icon" sizes="120x120" href="{{ site.baseurl }}/favicons/apple-icon-120x120.png">
+<link rel="apple-touch-icon" sizes="144x144" href="{{ site.baseurl }}/favicons/apple-icon-144x144.png">
+<link rel="apple-touch-icon" sizes="152x152" href="{{ site.baseurl }}/favicons/apple-icon-152x152.png">
+<link rel="apple-touch-icon" sizes="180x180" href="{{ site.baseurl }}/favicons/apple-icon-180x180.png">
+<link rel="icon" type="image/png" sizes="192x192"  href="{{ site.baseurl }}/favicons/android-icon-192x192.png">
+<link rel="icon" type="image/png" sizes="32x32" href="{{ site.baseurl }}/favicons/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="96x96" href="{{ site.baseurl }}/favicons/favicon-96x96.png">
+<link rel="icon" type="image/png" sizes="16x16" href="{{ site.baseurl }}/favicons/favicon-16x16.png">
+<meta name="msapplication-TileImage" content="{{ site.baseurl }}/favicons/ms-icon-144x144.png">
+<meta name="theme-color" content="{{ site.theme-color-attr }}">
+<!-- /icons -->
+
+<!-- og tags -->
+<meta property="og:site_name" content="{{ site.name }}">
+<meta property="og:title" content="{% if page.title %}{{ page.title }} • {{ site.name }}{% else %}{{ site.name }}{% endif %}">
+<meta property="og:locale" content="{{ site.lang }}">
+{% if page.og-image %}
+  <meta property="og:image" content="{{ site.url }}{{ site.baseurl }}/img/{{ page.og-image }}">
+{% else %}
+  {% if page.cover-image %}
+    <meta property="og:image" content="{{ site.url }}{{ site.baseurl }}/img/{{ page.cover-image }}">
+  {% else %}
+    <meta property="og:image" content="{{ site.url }}{{ site.baseurl }}/img/og-image.jpg">
+  {% endif %}
+{% endif %}
+<meta property="og:type" content="website">
+<meta property="og:url" content="{{ site.url }}{{ site.baseurl }}{{ page.url }}">
+<meta property="og:description" content="
+{% if page.summary %}
+{{ page.summary }}
+{% else %}
+{{ site.description.meta }}
+{% endif %}">
+<!-- /og tags -->
+<script>
+    (function() {
+        if (sessionStorage.fonts) {
+            document.documentElement.classList.add('wf-active');
+            window.addEventListener("DOMContentLoaded", function() {
+                document.body.classList.add('active')
+            });
+        } else {
+        }
+    })();
+</script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+<script src="{{ site.baseurl }}/js/modernizr.js"></script>
+<script src="{{ site.baseurl }}/js/fitvids.js"></script>
+<script type="text/javascript">
+    WebFontConfig = {
+        custom: {
+            families: ['KoPub Batang:n7,n4','NanumSquare:n8'],
+            urls: ['https://fonts.googleapis.com/earlyaccess/kopubbatang.css','https://cdn.rawgit.com/moonspam/NanumSquare/master/nanumsquare.css']
+        },
+        active: function() {
+            sessionStorage.fonts = true;
+        }
+    };
+    (function() {
+        var wf = document.createElement('script');
+        wf.src = ('https:' == document.location.protocol ? 'https' : 'http') +
+            '://ajax.googleapis.com/ajax/libs/webfont/1.6.16/webfont.js';
+        wf.type = 'text/javascript';
+        wf.async = 'true';
+        var s = document.getElementsByTagName('script')[0];
+        s.parentNode.insertBefore(wf, s);
+    })();
+</script>
+<link rel="stylesheet" href="{{ site.baseurl }}/css/reset.css">
+<link rel="stylesheet" href="{{ site.baseurl }}/css/pygments.css">
+{% if site.display-social-icons %}
+<link rel="stylesheet" href="{{ site.baseurl }}/css/font-awesome.css">
+{% endif %}
+<link rel="stylesheet" href="{{ site.baseurl }}/css/style.css">
+<!--[if gte IE 9]>
+  <style type="text/css">
+    .gradient {
+       filter: none;
+    }
+  </style>
+<![endif]-->
+
+{% if page.home != true or site.show-subtitle == false and site.display-social-icons == false %}
+<style>
+header {
+  margin-bottom: 40px;
+}
+@media all and (min-width: 500px) {
+  header {
+    margin-bottom: 100px;
+  }
+}
+header::after {
+  display: none;
+}
+</style>
+{% endif %}

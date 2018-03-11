@@ -151,7 +151,7 @@ highlighter: rouge
 kramdown:
   input: GFM
 paginate_path: "/page-:num/"
-permalink: pretty
+permalink: "/:year/:month/:title"
 defaults:
   -
     scope:

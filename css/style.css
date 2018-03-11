@@ -83,6 +83,13 @@ span.meta+a{
 span.meta+a:hover{
   color: rgb({{site.text-color}});
 }
+div.highlight a{
+  background: none;
+  font-weight:normal;
+}
+div.highlight a:hover{
+color: inherit;
+}
 .no-cssgradients a {
   text-decoration: underline;
 }
